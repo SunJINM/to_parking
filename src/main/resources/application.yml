@@ -1,0 +1,35 @@
+server:
+  port: 9000
+  #添加项目名
+  servlet:
+    context-path: /to_parking
+#连接数据库
+spring:
+  datasource:
+    username: root
+    password: Sun_123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/to_parking?useSSL=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    hikari:
+#      lifetime永久不过期
+      max-lifetime: 0
+
+
+  #设置图片大小限制
+  servlet:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+      enabled: true
+#配置security信息
+#Mybatis-plus配置
+mybatis-plus:
+  type-aliases-package: sun.project.to_parking.pojo,sun.project.to_parking.vo
+#  驼峰映射
+  configuration:
+    map-underscore-to-camel-case: true
+    #开启日志
+    #    日志配置-会影响性能
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mybatis/mapper/*.xml
+

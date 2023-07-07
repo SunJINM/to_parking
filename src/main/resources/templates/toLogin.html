@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>易停车后端管理系统登录页</title>
+    <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+    <meta name="author" content="Vincent Garreau" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" media="screen" th:href="@{/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/reset.css}"/>
+</head>
+<body>
+<!--由security控制是否登录成功-->
+<div id="particles-js">
+    <div class="login">
+        <div class="login-top" >
+            易停车管理系统登录页面
+        </div>
+        <form th:action="@{/page/toLogin}" method="post">
+        <div class="login-center clearfix">
+            <div class="login-center-img"><img th:src="@{/img/name.png}"/></div>
+            <div class="login-center-input">
+                <input type="text" name="admin" placeholder="请输入您的用户名" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的用户名'"/>
+                <div class="login-center-input-text">管理员账号</div>
+            </div>
+        </div>
+        <div class="login-center clearfix">
+            <div class="login-center-img"><img th:src="@{/img/password.png}"/></div>
+            <div class="login-center-input">
+                <input type="password" name="password" placeholder="请输入您的密码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'"/>
+<!--                onfocus聚焦事件，onblur非聚焦事件-->
+                <div class="login-center-input-text">密码</div>
+            </div>
+        </div>
+        <div  class="login-button">
+            <input type="submit" value="登录" style="width: 100%;height: 100%;background: #1963bf">
+        </div>
+        </form>
+    </div>
+    <div class="sk-rotating-plane"></div>
+</div>
+
+<script type="text/javascript" th:inline="javascript">
+
+</script>
+</body>
+
+
+</html>

@@ -1,0 +1,15 @@
+table{
+    margin: 0 auto;
+}
+table,
+table td,table th
+{
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding:5px;
+    padding:5px 50px;
+    text-align:center
+}
+tr:nth-child(2n-1) {
+    background:#eee;
+}

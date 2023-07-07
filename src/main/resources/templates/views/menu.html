@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>系统管理主页</title>
+    <meta name="description" content="AdminLTE2定制版">
+    <meta name="keywords" content="AdminLTE2定制版">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <script th:src="@{/release/plugins/ownJs/html5shiv.min.js}"></script>
+    <script th:src="@{/release/plugins/ownJs/respond.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/release/plugins/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/font-awesome/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/ionicons/css/ionicons.min.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/iCheck/square/blue.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/morris/morris.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/jvectormap/jquery-jvectormap-1.2.2.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/datepicker/datepicker3.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/daterangepicker/daterangepicker.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/datatables/dataTables.bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/treeTable/jquery.treetable.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/treeTable/jquery.treetable.theme.default.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/select2/select2.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/colorpicker/bootstrap-colorpicker.min.css}">
+    <link parel="stylesheet" th:href="@{/release/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/adminLTE/css/AdminLTE.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/adminLTE/css/skins/_all-skins.min.css}">
+    <link rel="stylesheet" th:href="@{/release/css/style.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/ionslider/ion.rangeSlider.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/ionslider/ion.rangeSlider.skinNice.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/bootstrap-slider/slider.css}">
+    <link rel="stylesheet" th:href="@{/release/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css}">
+</head>
+<body class="hold-transition skin-purple sidebar-mini">
+<div class="wrapper">
+    <!-- 页面头部 -->
+    <header class="main-header">
+        <!-- Logo -->
+        <a th:href="@{/page/views/menu}" class="logo">
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg">易停车后台管理系统</span>
+        </a>
+    </header>
+
+<!--    菜单-->
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="header"></li>
+<!--                首页-->
+                <li id="admin-index"><a  target="iframe" th:href="@{/page/views/pages/index}"><i class="fa fa-dashboard"></i> <span>首页</span></a></li>
+<!--                后台通用页面-->
+                <li class="treeview"><a  target="iframe" th:href="@{/page/views/pages/user}"><i class="fa fa fa-folder"></i> <span>用户管理</span></a></li>
+<!--                    系统管理-->
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-cube"></i> <span>系统管理</span>
+                        <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li id="order-manage">
+                            <a  target="iframe">
+<!--                                <a  target="iframe" th:href="@{}"> 用的时候加-->
+                                <i class="fa fa-circle-o"></i>订单管理
+                            </a>
+                        </li>
+                        <li id="order-cancel">
+                            <a  target="iframe" th:href="@{/page/views/pages/stall}">
+                                <i class="fa fa-circle-o"></i>停车位设置
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>系统控制面板</h1>
+            <ol class="breadcrumb">
+                <li><a th:href="@{/logout}"><i class="fa fa-dashboard"></i>退出系统</a></li>
+            </ol>
+        </section>
+        <!-- 正文区域 -->
+        <section class="content">
+            <div class="box">
+                <iframe th:src="@{/page/views/pages/index}" name="iframe" frameborder="0">
+                    <div>无法显示!</div>
+                </iframe>
+            </div>
+        </section>
+    </div>
+    </section>
+
+</div>
+</body>
+<style>
+    .box {
+        float: left;
+        left: 0px;
+        width: 1336px;
+        height: 670px;
+        overflow: auto;
+        margin-top: 0px;
+    }
+
+    iframe {
+        display: block;
+        border: 0px;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+
+
+
+
+
+<!--//JS-->
+<script th:src="@{/release/plugins/jQuery/jquery-2.2.3.min.js}"></script>
+<script th:src="@{/release/plugins/jQueryUI/jquery-ui.min.js}"></script>
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+<script th:src="@{/release/plugins/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/release/plugins/raphael/raphael-min.js}"></script>
+<script th:src="@{/release/plugins/morris/morris.min.js}"></script>
+<script th:src="@{/release/plugins/sparkline/jquery.sparkline.min.js}"></script>
+<script th:src="@{/release/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js}"></script>
+<script th:src="@{/release/plugins/jvectormap/jquery-jvectormap-world-mill-en.js}"></script>
+<script th:src="@{/release/plugins/knob/jquery.knob.js}"></script>
+<script th:src="@{/release/plugins/daterangepicker/moment.min.js}"></script>
+<script th:src="@{/release/plugins/daterangepicker/daterangepicker.js}"></script>
+<script th:src="@{/release/plugins/daterangepicker/daterangepicker.zh-CN.js}"></script>
+<script th:src="@{/release/plugins/datepicker/bootstrap-datepicker.js}"></script>
+<script th:src="@{/release/plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js}"></script>
+<script th:src="@{/release/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js}"></script>
+<script th:src="@{/release/plugins/slimScroll/jquery.slimscroll.min.js}"></script>
+<script th:src="@{/release/plugins/fastclick/fastclick.js}"></script>
+<script th:src="@{/release/plugins/iCheck/icheck.min.js}"></script>
+<script th:src="@{/release/plugins/adminLTE/js/app.min.js}"></script>
+<script th:src="@{/release/plugins/treeTable/jquery.treetable.js}"></script>
+<script th:src="@{/release/plugins/select2/select2.full.min.js}"></script>
+<script th:src="@{/release/plugins/colorpicker/bootstrap-colorpicker.min.js}"></script>
+<script th:src="@{/release/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.zh-CN.js}"></script>
+<script th:src="@{/release/plugins/bootstrap-markdown/js/bootstrap-markdown.js}"></script>
+<script th:src="@{/release/plugins/bootstrap-markdown/locale/bootstrap-markdown.zh.js}"></script>
+<script th:src="@{/release/plugins/bootstrap-markdown/js/markdown.js}"></script>
+<script th:src="@{/release/plugins/bootstrap-markdown/js/to-markdown.js}"></script>
+<script th:src="@{/release/plugins/ckeditor/ckeditor.js}"></script>
+<script th:src="@{/release/plugins/input-mask/jquery.inputmask.js}"></script>
+<script th:src="@{/release/plugins/input-mask/jquery.inputmask.date.extensions.js}"></script>
+<script th:src="@{/release/plugins/input-mask/jquery.inputmask.extensions.js}"></script>
+<script th:src="@{/release/plugins/datatables/jquery.dataTables.min.js}"></script>
+<script th:src="@{/release/plugins/datatables/dataTables.bootstrap.min.js}"></script>
+<script th:src="@{/release/plugins/chartjs/Chart.min.js}"></script>
+<script th:src="@{/release/plugins/flot/jquery.flot.min.js}"></script>
+<script th:src="@{/release/plugins/flot/jquery.flot.resize.min.js}"></script>
+<script th:src="@{/release/plugins/flot/jquery.flot.pie.min.js}"></script>
+<script th:src="@{/release/plugins/flot/jquery.flot.categories.min.js}"></script>
+<script th:src="@{/release/plugins/ionslider/ion.rangeSlider.min.js}"></script>
+<script th:src="@{/release/plugins/bootstrap-slider/bootstrap-slider.js}"></script>
+<script th:src="@{/release/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js}"></script>
+<script th:src="@{/release/plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js}"></script>
+</html>
+<!---->
